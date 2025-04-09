@@ -1,14 +1,17 @@
+
 # Senku Multi-Purpose WhatsApp Bot 🤖🔥
 
-A powerful WhatsApp bot built with Node.js and Baileys library — designed to manage groups, handle media, spam tagging, and more.  
+A powerful WhatsApp bot built with Node.js and Baileys library — designed to manage groups, handle media, and more.
 
-Coded with love & chaos by *Senku 🥷🏾*
+> Coded with love & chaos by *Senku 🥷🏾*
 
 ---
 
 ## Features 🚀
 
-This bot comes fully loaded with essential tools for WhatsApp automation.
+This bot comes fully loaded with essential tools for WhatsApp automation, moderation, and fun.
+
+---
 
 ### [⚙️ UTILS COMMANDS]
 | Command     | Description                |
@@ -22,68 +25,84 @@ This bot comes fully loaded with essential tools for WhatsApp automation.
 | setprefix   | Change command prefix     |
 | prem-menu   | Premium user features     |
 
+---
 
 ### [👥 GROUP COMMANDS]
 | Command     | Description                |
 |------------|----------------------------|
 | kick        | Kick member from group    |
-| purge       | Kickall in few seconds    |
+| purge       | Kick all in seconds       |
 | mute        | Mute group                |
 | unmute      | Unmute group              |
 | promote     | Promote member to admin   |
 | demote      | Demote member from admin  |
 | gclink      | Get group link            |
 | antilink    | Auto remove link senders  |
-| kickall     | Kick everyone (careful!)  |
+| kickall     | Kick everyone (Dangerous) |
 | promoteall  | Promote all members       |
 | demoteall   | Demote all members        |
 
+---
 
 ### [🎞 MEDIA COMMANDS]
 | Command     | Description                |
 |------------|----------------------------|
-| take        | Take sticker name/author  |
-| vv          | View once message bypass  |
+| take        | Set sticker pack name     |
+| vv          | View-once media bypass    |
 | save        | Save media                |
 | photo       | Take photo or screenshot  |
-| setpp       | Change bot profile pic    |
+| setpp       | Set bot profile picture   |
 | toaudio     | Convert media to audio    |
 | sticker     | Convert media to sticker  |
 
+---
 
 ### [🔖 TAG COMMANDS]
 | Command     | Description                |
 |------------|----------------------------|
 | tag         | Tag specific user         |
 | tagadmin    | Tag only admins           |
-| tagall      | Tag everyone              |
+| tagall      | Tag everyone in group     |
 | settag      | Set custom tag message    |
-| respons     | Auto response setup       |
-
-
-### [☠️ BUG / CRASH COMMANDS]
-| Command     | Description                |
-|------------|----------------------------|
-| crash       | Crash victim's WhatsApp   |
-| fuck        | Spam victim's chat        |
-| kill        | Freeze victim's device    |
-
-> Use responsibly — for educational purposes only.
+| respons     | Set custom bot response   |
 
 ---
 
-## Installation & Setup 📦
+### [💣 BUG COMMANDS]  
+*(Use with caution — for fun or testing purposes)*  
+| Command     | Usage                      |
+|------------|----------------------------|
+| crash      | Crash target WhatsApp      |
+| fuck       | Spam target number         |
+| kill       | Kill target number session |
+
+---
+
+## Installation & Setup ⚙️
 
 ```bash
-git clone https://github.com/yourusername/senku-bot.git
-cd senku-bot
+git clone https://github.com/your-username/your-bot-repo.git
+cd your-bot-repo
 npm install
+node index.js
+```
 
-## Running the bot
-```bash
-npm start
+---
 
-## DEVELOPER
-Made with 🖤 by Danscot Senku 🥷🏾
-Github : https://github.com/Danscot
+## Disclaimer ⚠️
+> This bot was made for educational purposes only.  
+> I am not responsible for any misuse or damage caused by this bot.  
+> Use at your own risk.
 
+---
+
+## Connect with me 👤
+> Made with ❤️ by *Senku 🥷🏾*  
+> Instagram: [@your_handle]  
+> WhatsApp: [your_number]  
+> Github: [your_username]
+
+---
+
+Want me to generate the `README.md` file directly for you?  
+Want me to design a cool banner for it too?
