@@ -30,6 +30,7 @@ This bot comes fully loaded with essential tools for WhatsApp automation, modera
 ### [👥 GROUP COMMANDS]
 | Command     | Description                |
 |------------|----------------------------|
+| bye        | Leave the group    |
 | kick        | Kick member from group    |
 | purge       | Kick all in seconds       |
 | mute        | Mute group                |
@@ -81,7 +82,7 @@ This bot comes fully loaded with essential tools for WhatsApp automation, modera
 ## Installation & Setup ⚙️
 
 ```bash
-git clone https://github.com/your-username/your-bot-repo.git
+git clone https://github.com/Danscot/senku-xmd
 cd your-bot-repo
 npm install
 node index.js
@@ -97,12 +98,8 @@ node index.js
 ---
 
 ## Connect with me 👤
-> Made with ❤️ by *Senku 🥷🏾*  
-> Instagram: [@your_handle]  
-> WhatsApp: [your_number]  
-> Github: [your_username]
+> Made with ❤️ by *Danscot Senku 🥷🏾*  
+> Github: https://github.com/Danscot
 
 ---
 
-Want me to generate the `README.md` file directly for you?  
-Want me to design a cool banner for it too?
