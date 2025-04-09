@@ -79,3 +79,11 @@ git clone https://github.com/yourusername/senku-bot.git
 cd senku-bot
 npm install
 
+## Running the bot
+```bash
+npm start
+
+## DEVELOPER
+Made with 🖤 by Danscot Senku 🥷🏾
+Github : https://github.com/Danscot
+
