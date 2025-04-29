@@ -1,33 +1,17 @@
 {
   "users": {
-    "0": {
-      "sudoList": [],
-      "tagAudioPath": "tag.mp3",
-      "antilink": false,
-      "response": true,
-      "autoreact": false,
-      "prefix": ".",
-      "reaction": "🥷🏽"
-    },
-    "50955001336": {
-      "sudoList": [],
-      "tagAudioPath": "tag.mp3",
-      "antilink": false,
-      "response": false,
-      "autoreact": false,
-      "prefix": [],
-      "reaction": "🌹"
-    },
+    "0": {},
     "237689360833": {
       "sudoList": [],
       "tagAudioPath": "tag.mp3",
       "antilink": false,
       "response": true,
       "autoreact": false,
-      "prefix": [
-        "❤️"
-      ],
-      "reaction": "🌹"
+      "prefix": ".",
+      "reaction": "🌹",
+      "welcome": false,
+      "record": false,
+      "type": false
     }
   }
 }

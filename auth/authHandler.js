@@ -2,6 +2,8 @@ import { makeWASocket, useMultiFileAuthState, DisconnectReason } from '@whiskeys
 
 import configManager from '../utils/manageConfigs.js';
 
+import group from '../commands/group.js'
+
 import readline from 'readline';
 
 async function promptUserNumber() {
@@ -15,7 +17,7 @@ async function promptUserNumber() {
             output: process.stdout,
         });
 
-        rl.question('Number : ', (number) => {
+        rl.question('📲 Enter your WhatsApp number (with country code, e.g., 237xxxx): ', (number) => {
 
             rl.close();
             resolve(number.trim());
@@ -53,7 +55,6 @@ async function connectToWhatsApp(handleMessage) {
         if (!state.creds.registered) {
 
             console.log(`
-
                     ⣤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⢤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀
             ⠀⠀⠀⠀⢀⡼⠋⠀⣀⠄⡂⠍⣀⣒⣒⠂⠀⠬⠤⠤⠬⠍⠉⠝⠲⣄⡀⠀⠀
             ⠀⠀⠀⢀⡾⠁⠀⠊⢔⠕⠈⣀⣀⡀⠈⠆⠀⠀⠀⡍⠁⠀⠁⢂⠀⠈⣷⠀⠀
@@ -68,10 +69,7 @@ async function connectToWhatsApp(handleMessage) {
             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠲⢤⣀⣀⠉⠉⠀⠀⠀⠀⠀⠁⠀⣠⠏⠀
             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠛⠒⠲⠶⠤⠴⠒⠚⠁⠀
 
-               ✅ HELLO WORLD FROM DEV SENKU
-
-            📲 Enter your WhatsApp number (with country code, e.g., 237xxxx) below.
-
+             ✅ HELLO WORLD FROM DEV SENKU HOPE YOU ENJOY
             `);
 
             try {
@@ -82,7 +80,7 @@ async function connectToWhatsApp(handleMessage) {
 
                 const code = await sock.requestPairingCode(number);
 
-                console.log(`📲 Pairing Code: ${code}`);
+                console.log(`\n\n📲 Pairing Code: ${code}`);
                 
                 console.log('👉 Enter this code on your WhatsApp phone app to pair.');
 
@@ -95,6 +93,9 @@ async function connectToWhatsApp(handleMessage) {
                 autoreact: false,
                 prefix: ".",
                 reaction: "🌹",
+                welcome: false,
+                record:false,
+                type:false
                 };
 
                 configManager.save();
@@ -105,6 +106,12 @@ async function connectToWhatsApp(handleMessage) {
     }, 5000);
 
     sock.ev.on('messages.upsert', async (msg) => handleMessage(msg, sock));
+
+    sock.ev.on('group-participants.update', async (update) => {
+
+        await group.welcome(update,sock);
+
+    });
 
     return sock;
 }

@@ -1,4 +1,7 @@
 
+
+import configManager from '../utils/manageConfigs.js'
+
 export async function prem(message, client) {
 
     const remoteJid = message.key.remoteJid;
@@ -17,30 +20,31 @@ export async function prem(message, client) {
 
     const owner = "𓂀 𝕊𝕖𝕟𝕜𝕦𓂀";
 
+    const number = client.user.id.split(':')[0];
+
     const username = message.pushName || "Unknown";
 
     const t = ` 
 ╭─────────────────╮
-    ༒ 𝕊𝕖𝕟𝕜𝕦 ༒
+      ༒ 𝕊𝕖𝕟𝕜𝕦 ༒
 ╰─────────────────╯
 ╭─────────────────╮
-│ Prefix : .
-│ User : ${username}  
+│ Prefix : ${configManager.config.users[number].prefix}
+│ Hello, ${username}  
 │ Day : ${currentDay}
 │ Date : ${currentDate}/${currentMonth}/${currentYear} 
-│ Version : 3
-│ Plugins : 2
-│ Type : X-MD 
+│ Version : 4.0
+│ Plugins : 50
+│ Type : X-MD        
 ╰─────────────────╯
 
-╭────[ PREMIUM CMDS ]─────╮
+╭─[ ✧ PREMIUM CMD ✧ ]──╮
 │      
 │ ⬢ connect 237xxxxx
-│ ⬢ reconnect 237xxxxx            
 │ ⬢ disconnect 237xxxxx        
 ╰─────────────────╯        
 
-made by Senku 🥷🏾
+> Powered By Senku Tech 🥷🏾
     `
 ;
 
@@ -60,6 +64,8 @@ made by Senku 🥷🏾
 
             isForwarded: true,
         },
+
+        quoted: message 
 
 
     });

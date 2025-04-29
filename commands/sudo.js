@@ -83,6 +83,18 @@ export async function sudo(message, client, list) {
 export async function delsudo(message, client, list) {
     
     await modifySudoList(message, client, list, "remove");
+
 }
 
-export default { sudo, delsudo };
+export async function getsudo(message, client, list) {
+    const remoteJid = message.key.remoteJid;
+
+    let msg = `Your sudo list is as follows:\n\n`;
+    for (let i = 0; i < list.length; i++) {
+        msg += `${i + 1}. ${list[i]}\n`;
+    }
+
+    await client.sendMessage(remoteJid, { text: msg });
+}
+
+export default { sudo, delsudo, getsudo };

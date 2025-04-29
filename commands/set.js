@@ -118,4 +118,140 @@ async function setreaction(message, client) {
     }
 }
 
-export default { setreaction, setprefix };
+
+export async function setwelcome(message, client) {
+
+    const number = client.user.id.split(':')[0];
+
+    const remoteJid = message.key.remoteJid;
+
+    const messageBody = message.message?.conversation || message.message?.extendedTextMessage?.text || "";
+
+    const commandAndArgs = messageBody.slice(1).trim();
+
+    const parts = commandAndArgs.split(/\s+/);
+
+    const args = parts.slice(1);
+
+    if (!configManager.config.users[number]) return;
+
+    try {
+
+        if (args.join(' ').toLowerCase().includes("on")) {
+
+            configManager.config.users[number].welcome = true;
+
+            configManager.save();
+
+            await bug(message, client, "Welcome has been turn on", 5); 
+
+        } else if (args.join(' ').toLowerCase().includes("off")) {
+
+            configManager.config.users[number].welcome = false;
+
+            configManager.save();
+
+            await bug(message, client, "Welcome has been turn off", 5); 
+
+        } else {
+
+            await bug(message, client, "Select an option on / off", 3); 
+        }
+    } catch (error) {
+
+        console.error("_Error changing the welcome:_", error);
+    }
+}
+
+
+export async function setautorecord(message, client) {
+
+    const number = client.user.id.split(':')[0];
+
+    const remoteJid = message.key.remoteJid;
+
+    const messageBody = message.message?.conversation || message.message?.extendedTextMessage?.text || "";
+
+    const commandAndArgs = messageBody.slice(1).trim();
+
+    const parts = commandAndArgs.split(/\s+/);
+
+    const args = parts.slice(1);
+
+    if (!configManager.config.users[number]) return;
+
+    try {
+
+        if (args.join(' ').toLowerCase().includes("on")) {
+
+            configManager.config.users[number].record = true;
+
+            configManager.save();
+
+            await bug(message, client, "autorecord has been turn on", 5); 
+
+        } else if (args.join(' ').toLowerCase().includes("off")) {
+
+            configManager.config.users[number].record = false;
+
+            configManager.save();
+
+            await bug(message, client, "autorecord has been turn off", 5); 
+
+        } else {
+
+            await bug(message, client, "Select an option on / off", 3); 
+        }
+    } catch (error) {
+
+        console.error("_Error changing the welcome:_", error);
+    }
+}
+
+
+export async function setautotype(message, client) {
+
+    const number = client.user.id.split(':')[0];
+
+    const remoteJid = message.key.remoteJid;
+
+    const messageBody = message.message?.conversation || message.message?.extendedTextMessage?.text || "";
+
+    const commandAndArgs = messageBody.slice(1).trim();
+
+    const parts = commandAndArgs.split(/\s+/);
+
+    const args = parts.slice(1);
+
+    if (!configManager.config.users[number]) return;
+
+    try {
+
+        if (args.join(' ').toLowerCase().includes("on")) {
+
+            configManager.config.users[number].type = true;
+
+            configManager.save();
+
+            await bug(message, client, "autotype has been turn on", 5); 
+
+        } else if (args.join(' ').toLowerCase().includes("off")) {
+
+            configManager.config.users[number].type = false;
+
+            configManager.save();
+
+            await bug(message, client, "autotype has been turn off", 5); 
+
+        } else {
+
+            await bug(message, client, "Select an option on / off", 3); 
+        }
+    } catch (error) {
+
+        console.error("_Error changing the welcome:_", error);
+    }
+}
+
+
+export default { setreaction, setprefix, setwelcome, setautorecord, setautotype };
