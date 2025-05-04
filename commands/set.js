@@ -49,7 +49,7 @@ async function setprefix(message, client) {
 
             if (!configManager.config.users[number]) configManager.config.users[number] = {};
 
-            configManager.config.users[number].prefix = prefix;
+            configManager.config.users[number].prefix = "";
 
             configManager.save()
 

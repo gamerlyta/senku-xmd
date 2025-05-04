@@ -23,7 +23,7 @@ export async function tagall(message, client) {
 
         await client.sendMessage(remoteJid, {
 
-            text: `_Hello world_\n${text}`,
+            text: `_Hello world From Dev Senku_\n${text}`,
 
             mentions: participants
         });
