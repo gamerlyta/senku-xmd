@@ -12,7 +12,7 @@
     "url": "git+https://github.com/Danscot/senku-xmd.git"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "github:cifumo/emi-bail",
+    "@whiskeysockets/baileys": "github:Danscot/senku_baileys",
     "axios-retry": "^4.5.0",
     "node-fetch": "^3.3.2",
     "wa-sticker-formatter": "^4.4.4"
